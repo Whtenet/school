@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/school.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-School</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        main {
+            background-color: #000000;
+            min-height: 700px;
+        }
+
+        footer {
+            background-color: #18233B;
+        }
+
+        .spanborder {
+            border-bottom: 1px solid #e8f3ec;
+            margin-bottom: 2rem;
+        }
+
+        .spanborder span {
+            border-bottom: 1px solid black;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <!-- 导航条 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                {{ footerItems.name }}
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li v-for="(item, index) in navbarData" :key="index"
+                        :class="{ 'nav-item': true, 'active': index === 0 }">
+                        <a class="nav-link" :href="item.href">{{ item.title }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--主体-->
+    <main style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container">
+
+            <!-- 内容部分 -->
+            <div class="mt-4">
+
+                <!--文章-->
+                <div class="row justify-content-between text-white">
+
+
+                    <div class="col-md-8">
+                        <h5 class="font-weight-bold spanborder"><span>食在郑商</span></h5>
+                        <div v-for="(news, index) in newsList" :key="index"
+                             class="mb-3 d-flex justify-content-between ">
+                            <div class="pr-3">
+                                <h2 class="mb-1 h4 font-weight-bold">
+                                    <a class="text-white" href="">{{ news.title }}</a>
+                                </h2>
+                                <p>{{ news.description }}</p>
+                                <div class="card-text text-muted small">
+                                    {{ news.author }}
+                                </div>
+                                <small class="text-muted">{{ news.date }} · {{ news.readingTime }}</small>
+                            </div>
+                            <img :height="news.imageHeight" :src="news.imageSrc">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 pl-4">
+                        <h5 class="font-weight-bold spanborder"><span>动在郑商</span></h5>
+                        <ol class="list-featured">
+                            <li v-for="(popularNews, index) in popularNewsList" :key="index">
+                                      <span>
+                                        <h6 class="font-weight-bold">
+                                          <a href="" class="text-white">{{ popularNews.title }}</a>
+                                        </h6>
+                                        <p class="text-muted">{{ popularNews.author }}</p>
+                                      </span>
+                            </li>
+                        </ol>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div v-for="(item, index) in imgcardsitems" :key="index" class="col-12 col-md-6">
+                        <!-- Card -->
+                        <a class="card text-white text-decoration-none lift lift-lg shadow-light-lg mb-6 mb-md-8 bg-dark"
+                           target="_blank">
+                            <img class="img-fluid card-img-top"
+                                 :alt="item.alt"
+                                 loading="lazy"
+                                 decoding="async"
+                                 :src="item.imgSrc"
+                                 width="600" height="450">
+                            <div class="card-body d-flex align-items-center">
+                                <!-- Heading -->
+                                <h5 class="mb-0 me-auto">
+                                    {{ item.title }}
+                                </h5>
+                                <span class="badge rounded-pill bg-secondary-soft">
+                                  <span class="h6 text-uppercase">
+                                    {{ item.bootstrapVersion }}
+                                  </span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="font-weight-light text-white-50 pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-md-between">
+                <div class="order-4 order-lg-1 col-md-12 col-lg-4 mr-lg-auto">
+                    <a class="navbar-brand mb-3 text-white" href="/">{{ footerItems.name }}</a>
+                    <p class="small font-weight-light mb-3">
+                        {{ footerItems.text }}</p>
+                </div>
+                <div v-for="(item, index) in items" :key="index" :class="item.class">
+                    <h4 class="h6 text-white mb-3">{{ item.title }}</h4>
+                    <ul class="list-unstyled">
+                        <li v-for="(link, linkIndex) in item.links" :key="linkIndex" class="mb-2">
+                            <a class="text-white-50" :href="link.url" target="_blank">{{ link.label }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3 opacity-10">
+            <div class="row">
+                <div class="col">
+                    <p class="small font-weight-light mb-0">
+                        <a class="text-white-50" href="https://beian.miit.gov.cn/" target="_blank">
+                            {{ footerItems.icp }}
+                        </a>
+                    </p>
+                </div>
+                <div class="col text-md-center">
+                </div>
+                <div class="col text-md-right">
+                    <p class="small font-weight-light mb-0">
+                        {{ footerItems.copyright }}
+                        <a class="text-white-50" href="#">
+                            {{ footerItems.name }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- 引入脚本文件 -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="js/vue3.js"></script>
+
+<script src="js/02.js"></script>
+</body>
+
+</html>
