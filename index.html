@@ -59,7 +59,7 @@
     <main style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
             <!-- 轮播图 -->
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
                 <ol class="carousel-indicators">
                     <li v-for="(item, index) in bannerData" :key="index" :data-target="'#carouselExampleIndicators'"
@@ -127,7 +127,7 @@
 
                 </div>
                 <!--title-->
-                <h4 class="ui horizontal divider header text-white">
+                <h4 class="ui horizontal divider header text-white mb-5">
                     <i class="bar chart icon"></i>
                     头条新闻
                 </h4>

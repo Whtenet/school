@@ -48,29 +48,29 @@ createApp({
         const cardData = [
             {
                 title: "高静",
-                imageSrc: "img/b01.jpg",
+                imageSrc: "img/teacher01.webp",
                 description: "先后荣获郑州商学院双师型教师、优秀教师、教书育人先进个人、信工学院第二届青年教师教学技能竞赛一等奖等荣誉"
             },
             {
                 title: "李芳",
-                imageSrc: "img/b02.jpg",
+                imageSrc: "img/teacher02.webp",
                 description: "发表科研论文7篇，核心论文1篇，主持及参与省部级、厅级项目60余项，其中“十四五”规划教材1部，主持及参与成果奖"
             },
             {
                 title: "常爱红",
-                imageSrc: "img/b03.jpg",
+                imageSrc: "img/teacher03.webp",
                 description: "先后发表学术论文4篇，其中SCI一篇参与立项省部级课题1项，主持申报市厅级课题2项，参编学术著作2部"
             },
             {
                 title: "苏宝英",
-                imageSrc: "img/b04.jpg",
+                imageSrc: "img/teacher04.webp",
                 description: "主持参与市厅级科研项目33项公开发表学术论文16篇，其中5篇为中文核心获得科研成果奖励6项主编、参编著作教材2部"
             },
         ];
         const bannerData = [
-            {src: 'img/222.jpg'},
-            {src: 'img/333.jpg'},
-            {src: 'img/444.jpg'}
+            {src: 'img/banner01.webp'},
+            {src: 'img/banner02.webp'},
+            {src: 'img/banner03.webp'}
         ];
 
 

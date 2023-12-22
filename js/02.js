@@ -52,7 +52,7 @@ createApp({
                 author: "推荐指数：7分",
                 date: "南苑二楼",
                 readingTime: "东校区",
-                imageSrc: "img/c01.jpg",
+                imageSrc: "img/food01.webp",
                 imageHeight: 120
             },
             {
@@ -62,7 +62,7 @@ createApp({
                 author: "推荐指数：9分",
                 date: "双月三楼",
                 readingTime: "三彩校区",
-                imageSrc: "img/c02.jpg",
+                imageSrc: "img/food02.webp",
                 imageHeight: 120
             },
             {
@@ -72,7 +72,7 @@ createApp({
                 author: "推荐指数：8分",
                 date: "四希一楼",
                 readingTime: "东校区",
-                imageSrc: "img/c03.jpg",
+                imageSrc: "img/food03.webp",
                 imageHeight: 120
             }
         ];
@@ -100,13 +100,13 @@ createApp({
         ];
         const imgcardsitems = [
             {
-                imgSrc: "img/c04.jpg",
+                imgSrc: "img/facility01.webp",
                 alt: 'Tabler - free and open-source HTML Dashboard UI Kit built on Bootstrap',
                 title: '大厅明亮舒适 视野开阔',
                 bootstrapVersion: '舒适沙发 好友交流'
             },
             {
-                imgSrc: "img/c05.jpg",
+                imgSrc: "img/facility02.webp",
                 alt: 'Anchor - a free Bootstrap UI Kit',
                 title: '基础设施齐全 舒适安心',
                 bootstrapVersion: '惬意生活 如家温暖'
