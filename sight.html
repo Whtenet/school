@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
             <div class="mt-4">
 
                 <!--title-->
-                <h4 class="ui horizontal divider header text-white mb-5">
+                <h4 class="ui horizontal divider header text-white mb-5 animate__animated animate__fadeInUp ">
                     <i class="location arrow icon"></i>
                     优美风景
                 </h4>
@@ -52,11 +53,11 @@
                         <div class="card-columns">
 
 
-                            <div v-for="(item, index) in cardItems" :key="index" class="card card-pin badge-dark">
-                                <img class="card-img" :src="item.imgSrc" :alt="item.alt">
-                                <div class="overlay">
+                            <div v-for="(item, index) in cardItems" :key="index" class="card card-pin badge-dark ">
+                                <img class="card-img " :src="item.imgSrc" :alt="item.alt">
+                                <div class="overlay animate__animated animate__fadeInUp">
                                     <h2 class="card-title title">{{ item.title }}</h2>
-                                    <div class="more">
+                                    <div class="more ">
                                         <a>
                                             <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
                                             2023/10

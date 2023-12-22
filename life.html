@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
     <link rel="stylesheet" href="css/paper.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
             <!-- 内容部分 -->
             <div class="mt-4">
                 <!--title-->
-                <h4 class="ui horizontal divider header text-white mb-5">
+                <h4 class=" animate__animated animate__fadeInUp ui horizontal divider header text-white  mb-5 ">
                     <i class="coffee icon"></i>
                     校园生活
                 </h4>
@@ -53,7 +54,7 @@
                     <div class="col-md-8">
                         <h5 class="font-weight-bold spanborder"><span>食在郑商</span></h5>
                         <div v-for="(news, index) in newsList" :key="index"
-                             class="mb-3 d-flex justify-content-between ">
+                             class="mb-3 d-flex animate__animated animate__fadeInUp justify-content-between ">
                             <div class="pr-3">
                                 <h2 class="mb-1 h4 font-weight-bold">
                                     <a class="text-white" href="">{{ news.title }}</a>
@@ -70,9 +71,11 @@
 
 
                     <div class="col-md-4 pl-4">
-                        <h5 class="font-weight-bold spanborder"><span>动在郑商</span></h5>
+                        <h5 class="font-weight-bold spanborder animate__animated animate__fadeInUp">
+                            <span>动在郑商</span></h5>
                         <ol class="list-featured">
-                            <li v-for="(popularNews, index) in popularNewsList" :key="index">
+                            <li v-for="(popularNews, index) in popularNewsList" :key="index"
+                                class="animate__animated animate__fadeInUp mb-4">
                                       <span>
                                         <h6 class="font-weight-bold">
                                           <a href="" class="text-white">{{ popularNews.title }}</a>
@@ -88,7 +91,8 @@
 
                 <!--设施-->
                 <div class="row">
-                    <div v-for="(item, index) in imgcardsitems" :key="index" class="col-12 col-md-6 mb-4">
+                    <div v-for="(item, index) in imgcardsitems" :key="index"
+                         class="col-12 col-md-6 mb-4 animate__animated animate__fadeInUp">
                         <!-- Card -->
                         <a class="card text-white text-decoration-none lift lift-lg shadow-light-lg mb-6 mb-md-8 bg-dark"
                            target="_blank">

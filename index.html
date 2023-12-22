@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
     <link rel="stylesheet" href="css/paper.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 
 </head>
 
@@ -73,10 +74,10 @@
 
 
                     <div class="col-md-8">
-                        <h5 class="font-weight-bold spanborder"><span>媒体视角</span></h5>
+                        <h5 class="font-weight-bold spanborder "><span>媒体视角</span></h5>
                         <div v-for="(news, index) in newsList" :key="index"
-                             class="mb-3 d-flex justify-content-between ">
-                            <div class="pr-3">
+                             class="mb-3 d-flex animate__animated animate__fadeInUp justify-content-between  ">
+                            <div class="pr-3 ">
                                 <h2 class="mb-1 h4 font-weight-bold">
                                     <a class="text-white" href="">{{ news.title }}</a>
                                 </h2>
@@ -91,10 +92,11 @@
                     </div>
 
 
-                    <div class="col-md-4 pl-4">
+                    <div class="col-md-4 pl-4 ">
                         <h5 class="font-weight-bold spanborder"><span>重要新闻</span></h5>
                         <ol class="list-featured">
-                            <li v-for="(popularNews, index) in popularNewsList" :key="index">
+                            <li v-for="(popularNews, index) in popularNewsList " :key="index"
+                                class="animate__animated animate__fadeInUp mb-5">
                                       <span>
                                         <h6 class="font-weight-bold">
                                           <a href="" class="text-white">{{ popularNews.title }}</a>
@@ -108,7 +110,7 @@
 
                 </div>
                 <!--title-->
-                <h4 class="ui horizontal divider header text-white mb-5">
+                <h4 class="ui horizontal divider header text-white mb-5 animate__animated animate__fadeInUp">
                     <i class="bar chart icon"></i>
                     头条新闻
                 </h4>
@@ -116,7 +118,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
 
                     <div v-for="(item, index) in cardData"
-                         class="col d-flex justify-content-center pb-5 rounded-home-item">
+                         class="col d-flex justify-content-center pb-5 rounded-home-item animate__animated animate__fadeInUp">
                         <div class="card shadow position-relative h-100 bg-dark text-white rounded-home-item"
                              style="max-width: 310px;">
                             <div class="card-header p-1">
