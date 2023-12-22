@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
                 <div class="row mt-5  ">
                     <div class="col-md-4 pb-4 animate__animated animate__fadeInUp" v-for="(card, index) in cards"
                          :key="index">
-                        <div class="card bg-dark">
+                        <div class="card bg-dark hvr-grow ">
                             <div class="card-body pb-5 text-white">
                                 <div class="pt-4 pb-5">
                                     <img :src="card.img" class="img-fluid img-center" style="height: 150px;"
