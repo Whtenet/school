@@ -49,44 +49,40 @@ createApp({
             {
                 imgSrc:
                     "img/sight01.webp",
-                alt: "Card image",
+                alt: "夏日一角",
                 title: "夏日一角",
-                link: "post.html",
+
             },
             {
                 imgSrc:
                     "img/sight02.webp",
-                alt: "Card image",
+                alt: "艺文广场",
                 title: "艺文广场",
                 link: "post.html",
             },
             {
                 imgSrc:
                     "img/sight03.webp",
-                alt: "Card image",
+                alt: "秋日校园",
                 title: "秋日校园",
-                link: "post.html",
             },
             {
                 imgSrc:
                     "img/sight04.webp",
-                alt: "Card image",
+                alt: "灿烂银杏",
                 title: "灿烂银杏",
-                link: "post.html",
             },
             {
                 imgSrc:
                     "img/sight05.webp",
-                alt: "Card image",
+                alt: "春日花坛",
                 title: "春日花坛",
-                link: "post.html",
             },
             {
                 imgSrc:
                     "img/sight06.webp",
-                alt: "Card image",
+                alt: "艺术展示",
                 title: "艺术展示",
-                link: "post.html",
             },
 
         ];

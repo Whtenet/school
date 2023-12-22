@@ -8,18 +8,7 @@
     <title>My-School</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/semantic.min.css">
-    <style>
-        main {
-            background-color: #000000;
-            min-height: 700px;
-        }
-
-        footer {
-            background-color: #18233B;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="css/school.css">
 </head>
 
 <body>
@@ -57,7 +46,7 @@
                     <i class="location arrow icon"></i>
                     优美风景
                 </h4>
-
+                <!--卡片-->
                 <div class="container-fluid">
                     <div class="row">
                         <div class="card-columns">
@@ -68,8 +57,10 @@
                                 <div class="overlay">
                                     <h2 class="card-title title">{{ item.title }}</h2>
                                     <div class="more">
-                                        <a :href="item.link">
-                                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+                                        <a>
+                                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                                            2023/10
+                                        </a>
                                     </div>
                                 </div>
                             </div>
