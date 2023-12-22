@@ -38,7 +38,7 @@ createApp({
             }
         ];
         const footerItems = {
-            name: "School网",
+            name: "University",
             copyright: "© 2023-2024 School. All Rights Reserved.",
             icp: "豫ICP备2023005799号",
             text: "学校以殷殷实力为莘莘学子成就未来，搭建坚实平台，构筑成功之路，让每一位学子走向全国、走向世界、走向成功人生。",

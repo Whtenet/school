@@ -14,3 +14,7 @@ footer {
 .navbar-nav .nav-link {
     font-size: 16px;
 }
+.navbar-brand{
+	font-size: 1.5rem;
+	font-weight: bolder;
+}

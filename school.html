@@ -1,156 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="img/school.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My-School</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/semantic.min.css">
-    <link rel="stylesheet" href="css/school.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="img/school.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>University</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/semantic.min.css">
+		<link rel="stylesheet" href="css/school.css">
+		<style>
+			.table {
+				border-collapse: collapse;
+				width: 100%;
+			}
 
-<body>
-<div id="app">
-    <!-- 导航条 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" :href="navbarData[0].href">
-                {{ footerItems.name }}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li v-for="(item, index) in navbarData" :key="index"
-                        :class="{ 'nav-item': true, 'active': index === 0 }">
-                        <a class="nav-link" :href="item.href">{{ item.title }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+			.table th,
+			.table td {
+				padding: 0.5rem;
+				text-align: center;
+			}
+		</style>
+	</head>
 
-    <!--主体-->
-    <main style="padding-top: 20px; padding-bottom: 20px;">
-        <div class="container">
+	<body>
+		<div id="app">
+			<!-- 导航条 -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<div class="container">
+					<a class="navbar-brand" :href="navbarData[0].href">
+						{{ footerItems.name }}
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ml-auto">
+							<li v-for="(item, index) in navbarData" :key="index"
+								:class="{ 'nav-item': true, 'active': index === 0 }">
+								<a class="nav-link" :href="item.href">{{ item.title }}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 
-            <img src="./img/banner03.webp" class="img-fluid" alt="...">
+			<!--主体-->
+			<main style="padding-top: 20px; padding-bottom: 20px;">
+				<div class="container">
 
-            <!-- 内容部分 -->
-            <div class="mt-4">
+					<img src="./img/banner03.webp" class="img-fluid" alt="...">
 
-                <div>
-
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        郑州商学院（ZBU，简称“郑商”）是经国家教育部批准，由豫籍著名教育家王广亚博士为回馈桑梓、贡献家乡教育事业而捐资创建，是一所以经济学、管理学为主，文学、工学、艺术学、教育学、法学等多学科协调发展的普通本科高校。学校现有紫荆东校区、紫荆西校区和三彩校区共3个校区，占地面积2283亩，建筑面积50余万平方米。</p>
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        发展历程。学校创建于2004年，前身是与河南财经政法大学合作建设的独立学院——河南财经政法大学成功学院；2012年转设为独立设置的普通本科高校——郑州成功财经学院；2018年更名为郑州商学院。2021年，学校顺利通过了教育部本科教学工作合格评估，入选了河南省硕士学位重点立项培育单位，标志着学校人才培养质量和办学水平跨越到新的阶段。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        办学理念。落实立德树人根本任务，遵循高等教育规律，以“勤俭、朴实、自力、更生”为校训，秉承“伦理、创新、品质、绩效”的办学理念，弘扬“爱国爱校、宁静好学、礼让整洁”的办学精神，坚持“要有好的师资、要有好的设备、要有好的管理、要有好的制度、要有好的福利”的“五好”办学原则。董事长王育华女士秉承办学初心，坚定不移地选择非营利性办学模式，提出了“目标与行动”“团队与责任”“态度与细节”的办学要求，为学校发展树立了目标、指明了方向。近年来，学校在深入学习党的教育方针政策、认真分析国家和河南省经济发展战略的基础上，全面总结办学经验，提出了“以学生为中心、以教师为主体、以服务为导向、以制度为保障”的发展思路，坚持走内涵发展、特色发展之路，将学校建成省内一流、国内知名、商科特色鲜明的应用型普通本科高校。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        加强党的领导。坚持以习近平新时代中国特色社会主义思想为指导，全面加强党的领导，坚持社会主义办学方向，筑牢育人体系，厚植家国情怀。校党委强化党建责任，完善各级党组织设置，实现了党的基层组织全覆盖；选优配强分党委书记、党总支书记、党支部书记、组织员等各级党务干部；紧密结合学校实际，充分发挥党组织的政治核心作用、基层组织的战斗堡垒作用和党员的先锋模范作用。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        学院、学科及专业。现有管理学院、会计学院、金融与贸易学院、外国语学院、信息与机电工程学院、艺术学院、文学与新闻传播学院、建筑工程学院、通识教育中心、马克思主义学院、体育学院等11个二级学院，涵盖经济学、管理学、文学、工学、艺术学、教育学、法学等7大学科门类，73个本专科专业（本科专业47个）。其中，工商管理学科为省级重点学科，商务英语、工商管理、会计学、动画等4个专业为省级一流本科专业建设点，工商管理、会计学、财务管理、计算机科学与技术、动画、国际经济与贸易、汉语言文学、商务英语、环境设计、审计学、英语等11个专业为省级品牌专业建设点，计算机科学与技术、财务管理、会计学等3个专业为省级综合改革试点专业，工商管理专业为省级特色专业建设点，工商管理、工程管理、会计学、汉语言文学、机械设计制造及其自动化、投资学、国际经济与贸易、计算机科学与技术、土木工程、知识产权、审计学等11个专业为省级专业建设资助项目。学校“ERP综合实验教学示范中心”为河南省高等学校实验教学示范中心。此外，全力开展一流专业、一流课程等教学质量工程建设，立足学校办学目标定位和区域经济社会发展需求，按照“商科+”学科专业建设的原则，集中力量和资源建设工商管理、会计学、金融贸易等优势学科专业集群，强化与校地校企在人才培养方案共制、专业课程共建、师资培养共训等方面的深度合作，实现互利共赢、共同发展。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        坚持立德树人，提升学生综合素质。学校始终坚守“为党育人、为国育才”的初心使命，把立德树人融入思想道德教育、文化知识教育、社会实践教育各环节。构建了服务发展型学生工作体系，提出了“要为学生提供‘实在’而‘丰满’的教育”的工作目标，
-                        精心打造了学生服务中心（线上+线下学生事务服务平台）、心理健康教育中心、学生活动中心等“三大中心”，积极开展爱国教育、劳动教育、礼仪教育等“三大教育”，大力实施书香校园阅读经典工程、身体素养提升工程等“两大工程”，致力于培养“有追求、懂礼仪、爱劳动、勤读书、强体魄”的德智体美劳全面发展的社会主义合格建设者和接班人。
-
-                    </p>
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        深化教育综合改革，提升学生专业素质。一是立足办学定位，培育人才培养特色。学校坚持质量导向，加强顶层设计，立足建设“商科特色鲜明的应用型普通本科高校”的办学定位，凝练培育“商科、应用型、国际化”人才培养特色，努力培养具有扎实商科专业背景、现代职业应用能力、国际化视野的高级应用型人才。二是深化教学综合改革，提高人才培养质量。学校高度重视人才培养工作，遵循高等教育规律和人才成长规律，深入开展了教学综合改革，主要包括分层分类教学改革、应然课程体系建设、大学英语改革、大学体育改革、教风学风协同建设和强化毕业生实习实训专项工作等六个改革实践项目。通过改革探索与实践，学校的人才培养质量稳步提升、教学中心地位更加突出、教学质量与规范意识更加深入人心、教师认真教和学生努力学的氛围已蔚然成风，为未来更好地坚持特色发展奠定了坚实基础。
-                    </p>
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        坚持全面协同育人，促进学生高质量就业。学校高度重视就业工作，秉承招生—培养—就业的闭环联动机制，将其作为民生工程、品牌工程来建设打造，并提出了“能就业、好就业、就好业、能创业”的梯次追求目标，着力促进毕业生更加充分、更高质量就业。一是强化顶层设计，健全就业工作机制；二是强化就业指导，保障就业工作全覆盖；三是强化协同联动，全力促进高质量就业。通过不断地努力与探索，学校就业工作成效凸显，毕业生就业去向落实率连续多年稳居全省高校前列，多次作为先进单位在全省就业创业推进会上交流发言；2022年被省教育厅推介到教育部宣传推广；2023年作为就业工作优秀单位受邀参加教育部组织召开的全国就业工作座谈会，作为全省唯一的新建本科高校代表参加王凯省长组织召开的全省就业工作座谈会。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        注重师资队伍建设。教师队伍由众多教授、博士等高级人才组成，实力雄厚。充分利用社会资源，建设了“校外师资库”和“双师双能型”教师队伍，聘请了多位国家有突出贡献专家、享受国务院政府特殊津贴专家、省管优秀专家、省级学术技术带头人、国内外知名学者和大型企业负责人担任学校客座教授、特聘教授和专业建设顾问等。坚持“破五唯”原则，有针对性地实行“一人一策、一事一议”，扩大选人用人视野，提高人才引进质量。学校现有专任教师中，高级职称教师占47.5%，具有硕士、博士学位的教师占89.9%，双师型教师占35.7%。其中，河南省教育厅优秀教育管理人才36人、省教育厅学术技术带头人48人、省级优秀教师51人、省级文明教师35人、省级青年骨干教师57人、省教育系统先进工作者48人。
-                    </p>
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        重视科学研究。确立了“三服务”科研工作方针（服务教学、服务学校、服务地方），制订了“企业（政府）出题、学校支持、院部作答、市场检验”的工作机制。围绕服务区域经济发展和文化传承，成立了杜甫研究所、宋陵文化研究所、巩义窑陶瓷研究院、智能商业研究院、区域经济发展研究中心、旅游发展研究中心、黄河流域商文化研究中心、豫商文化研究中心、竹林精神研究中心、孝义文化研究中心、智能财务研究中心、新时代民办高校思政课改革创新研究中心、国际化人才培养与能力测评研究中心、工程技术研究中心等“两所两院十中心”科研平台。近三年，学校教师获批厅级以上项目立项1020项，厅级以上获奖成果758项，发表核心论文354篇，横向科研项目216项。学校申报的《新中国70年（1949—2019）我国高校劳动教育嬗变、特点及实施策略构建研究》课题获准全国教育科学“十三五”规划课题立项，学校科研工作综合实力居全省同类高校前列。
-                    </p>
-
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        深化境外交流与合作。与美国、英国、韩国、马来西亚、西班牙等国家的15所高校建立了合作关系，积极开展中外合作办学项目；多次承办海峡两岸学术交流会议、“台湾青年中原文化之旅”等，定期选派优秀学生赴境外交流学习、实习就业，培养学生国际化视野。近年来，共有1000余名学生和200余名教师赴境外交流。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        近年来，学校人才培养质量和办学水平得到上级部门和社会各界的普遍认可与好评，先后荣获全国教育改革创新示范学校、全国本科高校综合影响力百强院校、建党100周年河南综合实力10强院校、河南高等教育高质量发展十佳领军院校、河南省高等教育教学工作先进单位、河南省普通高校毕业生就业工作优秀单位等多项省级及以上荣誉，并连续六年被省教育厅评为“河南省优秀民办学校”。人民日报、新华社、光明日报、中央电视台、中国青年报、中国教育报、河南日报等国家级、省级媒体多次报道学校的办学特色与教育教学成果。
-                    </p>
-                    <p class="text-justify" style="color: white; text-indent: 2em;">
-                        学校以殷殷实力为莘莘学子成就未来，搭建坚实平台，构筑成功之路，让每一位学子走向全国、走向世界、走向成功人生。
-                    </p>
-                </div>
-
-            </div>
+					<!-- 内容部分 -->
+					<div class="mt-4">
+						<!--title-->
+						<h4 class="ui horizontal divider header text-white mb-5">
+							<i class="briefcase icon"></i>
+							学校简介
+						</h4>
+						<!-- 内容 -->
+						<div class="mb-5">
 
 
-        </div>
-    </main>
 
-    <!-- 页脚 -->
-    <footer class="font-weight-light text-white-50 pt-5 pb-5">
-        <div class="container">
-            <div class="row justify-content-md-between">
-                <div class="order-4 order-lg-1 col-md-12 col-lg-4 mr-lg-auto">
-                    <a class="navbar-brand mb-3 text-white" href="/">{{ footerItems.name }}</a>
-                    <p class="small font-weight-light mb-3">
-                        {{ footerItems.text }}</p>
-                </div>
-                <div v-for="(item, index) in items" :key="index" :class="item.class">
-                    <h4 class="h6 text-white mb-3">{{ item.title }}</h4>
-                    <ul class="list-unstyled">
-                        <li v-for="(link, linkIndex) in item.links" :key="linkIndex" class="mb-2">
-                            <a class="text-white-50" :href="link.url" target="_blank">{{ link.label }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-3 opacity-10">
-            <div class="row">
-                <div class="col">
-                    <p class="small font-weight-light mb-0">
-                        <a class="text-white-50" href="https://beian.miit.gov.cn/" target="_blank">
-                            {{ footerItems.icp }}
-                        </a>
-                    </p>
-                </div>
-                <div class="col text-md-center">
-                </div>
-                <div class="col text-md-right">
-                    <p class="small font-weight-light mb-0">
-                        {{ footerItems.copyright }}
-                        <a class="text-white-50" href="#">
-                            {{ footerItems.name }}
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-<!-- 引入脚本文件 -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script>
-    new WOW().init();
-</script>
-<script src="js/vue3.js"></script>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								郑州商学院（ZBU，简称“郑商”）是经国家教育部批准，由豫籍著名教育家王广亚博士为回馈桑梓、贡献家乡教育事业而捐资创建，是一所以经济学、管理学为主，文学、工学、艺术学、教育学、法学等多学科协调发展的普通本科高校。学校现有紫荆东校区、紫荆西校区和三彩校区共3个校区，占地面积2283亩，建筑面积50余万平方米。
+							</p>
 
-<script src="js/school.js"></script>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								发展历程。学校创建于2004年，前身是与河南财经政法大学合作建设的独立学院——河南财经政法大学成功学院；2012年转设为独立设置的普通本科高校——郑州成功财经学院；2018年更名为郑州商学院。2021年，学校顺利通过了教育部本科教学工作合格评估，入选了河南省硕士学位重点立项培育单位，标志着学校人才培养质量和办学水平跨越到新的阶段。
+							</p>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								办学理念。落实立德树人根本任务，遵循高等教育规律，以“勤俭、朴实、自力、更生”为校训，秉承“伦理、创新、品质、绩效”的办学理念，弘扬“爱国爱校、宁静好学、礼让整洁”的办学精神，坚持“要有好的师资、要有好的设备、要有好的管理、要有好的制度、要有好的福利”的“五好”办学原则。董事长王育华女士秉承办学初心，坚定不移地选择非营利性办学模式，提出了“目标与行动”“团队与责任”“态度与细节”的办学要求，为学校发展树立了目标、指明了方向。近年来，学校在深入学习党的教育方针政策、认真分析国家和河南省经济发展战略的基础上，全面总结办学经验，提出了“以学生为中心、以教师为主体、以服务为导向、以制度为保障”的发展思路，坚持走内涵发展、特色发展之路，将学校建成省内一流、国内知名、商科特色鲜明的应用型普通本科高校。
+							</p>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								加强党的领导。坚持以习近平新时代中国特色社会主义思想为指导，全面加强党的领导，坚持社会主义办学方向，筑牢育人体系，厚植家国情怀。校党委强化党建责任，完善各级党组织设置，实现了党的基层组织全覆盖；选优配强分党委书记、党总支书记、党支部书记、组织员等各级党务干部；紧密结合学校实际，充分发挥党组织的政治核心作用、基层组织的战斗堡垒作用和党员的先锋模范作用。
+							</p>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								注重师资队伍建设。教师队伍由众多教授、博士等高级人才组成，实力雄厚。充分利用社会资源，建设了“校外师资库”和“双师双能型”教师队伍，聘请了多位国家有突出贡献专家、享受国务院政府特殊津贴专家、省管优秀专家、省级学术技术带头人、国内外知名学者和大型企业负责人担任学校客座教授、特聘教授和专业建设顾问等。坚持“破五唯”原则，有针对性地实行“一人一策、一事一议”，扩大选人用人视野，提高人才引进质量。学校现有专任教师中，高级职称教师占47.5%，具有硕士、博士学位的教师占89.9%，双师型教师占35.7%。其中，河南省教育厅优秀教育管理人才36人、省教育厅学术技术带头人48人、省级优秀教师51人、省级文明教师35人、省级青年骨干教师57人、省教育系统先进工作者48人。
+							</p>
 
-</body>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								深化境外交流与合作。与美国、英国、韩国、马来西亚、西班牙等国家的15所高校建立了合作关系，积极开展中外合作办学项目；多次承办海峡两岸学术交流会议、“台湾青年中原文化之旅”等，定期选派优秀学生赴境外交流学习、实习就业，培养学生国际化视野。近年来，共有1000余名学生和200余名教师赴境外交流。
+							</p>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								近年来，学校人才培养质量和办学水平得到上级部门和社会各界的普遍认可与好评，先后荣获全国教育改革创新示范学校、全国本科高校综合影响力百强院校、建党100周年河南综合实力10强院校、河南高等教育高质量发展十佳领军院校、河南省高等教育教学工作先进单位、河南省普通高校毕业生就业工作优秀单位等多项省级及以上荣誉，并连续六年被省教育厅评为“河南省优秀民办学校”。人民日报、新华社、光明日报、中央电视台、中国青年报、中国教育报、河南日报等国家级、省级媒体多次报道学校的办学特色与教育教学成果。
+							</p>
+							<p class="text-justify" style="color: white; text-indent: 2em;">
+								学校以殷殷实力为莘莘学子成就未来，搭建坚实平台，构筑成功之路，让每一位学子走向全国、走向世界、走向成功人生。
+							</p>
+						</div>
+						<!--title-->
+						<h4 class="ui horizontal divider header text-white mb-5">
+							<i class="male icon"></i>
+							现任领导
+						</h4>
+						<!-- 现任领导 -->
+						<table class="table table-dark table-bordered table-striped">
+							<tr>
+								<th scope="col">职务</th>
+								<th scope="col">姓名</th>
+							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>董事长</td>
+									<td>王育华</td>
+								</tr>
+								<tr>
+									<td>执行董事</td>
+									<td>陈坚德</td>
+								</tr>
+								<tr>
+									<td>党委书记</td>
+									<td>吴建军</td>
+								</tr>
+								<tr>
+									<td>校长</td>
+									<td>吴泽强</td>
+								</tr>
+								<tr>
+									<td>党委副书记、纪委书记</td>
+									<td>裴晓涛</td>
+								</tr>
+								<tr>
+									<td>副校长</td>
+									<td>李 刚</td>
+								</tr>
+								<tr>
+									<td>校长助理、工会主席</td>
+									<td>张江涛</td>
+								</tr>
+								<tr>
+									<td>校长助理</td>
+									<td>刘升阳</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+
+
+				</div>
+			</main>
+
+			<!-- 页脚 -->
+			<footer class="font-weight-light text-white-50 pt-5 pb-5">
+				<div class="container">
+					<div class="row justify-content-md-between">
+						<div class="order-4 order-lg-1 col-md-12 col-lg-4 mr-lg-auto">
+							<a class="navbar-brand mb-3 text-white" href="/">{{ footerItems.name }}</a>
+							<p class="small font-weight-light mb-3">
+								{{ footerItems.text }}
+							</p>
+						</div>
+						<div v-for="(item, index) in items" :key="index" :class="item.class">
+							<h4 class="h6 text-white mb-3">{{ item.title }}</h4>
+							<ul class="list-unstyled">
+								<li v-for="(link, linkIndex) in item.links" :key="linkIndex" class="mb-2">
+									<a class="text-white-50" :href="link.url" target="_blank">{{ link.label }}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<hr class="my-3 opacity-10">
+					<div class="row">
+						<div class="col">
+							<p class="small font-weight-light mb-0">
+								<a class="text-white-50" href="https://beian.miit.gov.cn/" target="_blank">
+									{{ footerItems.icp }}
+								</a>
+							</p>
+						</div>
+						<div class="col text-md-center">
+						</div>
+						<div class="col text-md-right">
+							<p class="small font-weight-light mb-0">
+								{{ footerItems.copyright }}
+								<a class="text-white-50" href="#">
+									{{ footerItems.name }}
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- 引入脚本文件 -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+		<script src="js/vue3.js"></script>
+
+		<script src="js/school.js"></script>
+
+	</body>
 
 </html>
