@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
-
+    <link rel="stylesheet" href="css/paper.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <!-- 导航条 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" :href="navbarData[0].href">
                 {{ footerItems.name }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -38,58 +38,78 @@
     <!--主体-->
     <main style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
-            <!-- 轮播图 -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-                <ol class="carousel-indicators">
-                    <li v-for="(item, index) in bannerData" :key="index" :data-target="'#carouselExampleIndicators'"
-                        :data-slide-to="index" :class="{ 'active': index === 0 }"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div v-for="(item, index) in bannerData" :key="index"
-                         :class="{ 'carousel-item': true, 'active': index === 0 }">
-                        <img :src="item.src" class="d-block w-100">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
-                        data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
-                        data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </button>
-            </div>
-
 
             <!-- 内容部分 -->
             <div class="mt-4">
                 <!--title-->
                 <h4 class="ui horizontal divider header text-white mb-5">
-                    <i class="address book outline icon"></i>
-                    名师风采
+                    <i class="coffee icon"></i>
+                    校园生活
                 </h4>
-                <!--卡片1-->
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
-                    <div v-for="(item, index) in cardData"
-                         class="col d-flex justify-content-center pb-5 rounded-home-item">
-                        <div class="card shadow position-relative h-100 bg-dark text-white rounded-home-item"
-                             style="max-width: 310px;">
-                            <div class="card-header p-1">
-                                <img class="img-fluid lazy rounded-home-item-img"
-                                     :src="item.imageSrc" width="300" height="150"
-                                     :alt="item.title"></div>
-                            <div class="card-body p-3">
-                                <h4 class="h5 mb-2">
-                                    <a class="link-dark stretched-link text-white" target="_blank">{{item.title}}</a>
-                                </h4>
-                                <p class="card-text mb-3 text-white-50" style="height: 7rem; overflow: hidden;">
-                                    {{item.description}}
-                                </p>
+                <!--文章-->
+                <div class="row justify-content-between text-white mb-5">
+
+
+                    <div class="col-md-8">
+                        <h5 class="font-weight-bold spanborder"><span>食在郑商</span></h5>
+                        <div v-for="(news, index) in newsList" :key="index"
+                             class="mb-3 d-flex justify-content-between ">
+                            <div class="pr-3">
+                                <h2 class="mb-1 h4 font-weight-bold">
+                                    <a class="text-white" href="">{{ news.title }}</a>
+                                </h2>
+                                <p>{{ news.description }}</p>
+                                <div class="card-text text-muted small">
+                                    {{ news.author }}
+                                </div>
+                                <small class="text-muted">{{ news.date }} · {{ news.readingTime }}</small>
                             </div>
+                            <img :height="news.imageHeight" :src="news.imageSrc">
                         </div>
+                    </div>
+
+
+                    <div class="col-md-4 pl-4">
+                        <h5 class="font-weight-bold spanborder"><span>动在郑商</span></h5>
+                        <ol class="list-featured">
+                            <li v-for="(popularNews, index) in popularNewsList" :key="index">
+                                      <span>
+                                        <h6 class="font-weight-bold">
+                                          <a href="" class="text-white">{{ popularNews.title }}</a>
+                                        </h6>
+                                        <p class="text-muted">{{ popularNews.author }}</p>
+                                      </span>
+                            </li>
+                        </ol>
+                    </div>
+
+
+                </div>
+
+                <!--设施-->
+                <div class="row">
+                    <div v-for="(item, index) in imgcardsitems" :key="index" class="col-12 col-md-6 mb-4">
+                        <!-- Card -->
+                        <a class="card text-white text-decoration-none lift lift-lg shadow-light-lg mb-6 mb-md-8 bg-dark"
+                           target="_blank">
+                            <img class="img-fluid card-img-top"
+                                 :alt="item.alt"
+                                 loading="lazy"
+                                 decoding="async"
+                                 :src="item.imgSrc"
+                                 width="600" height="450">
+                            <div class="card-body d-flex align-items-center">
+                                <!-- Heading -->
+                                <h5 class="mb-0 me-auto">
+                                    {{ item.title }}
+                                </h5>
+                                <span class="badge rounded-pill bg-secondary-soft">
+                                  <span class="h6 text-uppercase">
+                                    {{ item.bootstrapVersion }}
+                                  </span>
+                                </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -150,8 +170,7 @@
 </script>
 <script src="js/vue3.js"></script>
 
-<script src="js/01.js"></script>
-
+<script src="js/life.js"></script>
 </body>
 
 </html>

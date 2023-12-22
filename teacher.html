@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/semantic.min.css">
     <link rel="stylesheet" href="css/school.css">
+
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <!-- 导航条 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" :href="navbarData[0].href">
                 {{ footerItems.name }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -37,35 +38,57 @@
     <!--主体-->
     <main style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
+            <!-- 轮播图 -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li v-for="(item, index) in bannerData" :key="index" :data-target="'#carouselExampleIndicators'"
+                        :data-slide-to="index" :class="{ 'active': index === 0 }"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div v-for="(item, index) in bannerData" :key="index"
+                         :class="{ 'carousel-item': true, 'active': index === 0 }">
+                        <img :src="item.src" class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
+            </div>
+
 
             <!-- 内容部分 -->
             <div class="mt-4">
-
                 <!--title-->
                 <h4 class="ui horizontal divider header text-white mb-5">
-                    <i class="location arrow icon"></i>
-                    优美风景
+                    <i class="address book outline icon"></i>
+                    名师风采
                 </h4>
-                <!--卡片-->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="card-columns">
-
-
-                            <div v-for="(item, index) in cardItems" :key="index" class="card card-pin badge-dark">
-                                <img class="card-img" :src="item.imgSrc" :alt="item.alt">
-                                <div class="overlay">
-                                    <h2 class="card-title title">{{ item.title }}</h2>
-                                    <div class="more">
-                                        <a>
-                                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-                                            2023/10
-                                        </a>
-                                    </div>
-                                </div>
+                <!--卡片1-->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
+                    <div v-for="(item, index) in cardData"
+                         class="col d-flex justify-content-center pb-5 rounded-home-item">
+                        <div class="card shadow position-relative h-100 bg-dark text-white rounded-home-item"
+                             style="max-width: 310px;">
+                            <div class="card-header p-1">
+                                <img class="img-fluid lazy rounded-home-item-img"
+                                     :src="item.imageSrc" width="300" height="150"
+                                     :alt="item.title"></div>
+                            <div class="card-body p-3">
+                                <h4 class="h5 mb-2">
+                                    <a class="link-dark stretched-link text-white" target="_blank">{{item.title}}</a>
+                                </h4>
+                                <p class="card-text mb-3 text-white-50" style="height: 7rem; overflow: hidden;">
+                                    {{item.description}}
+                                </p>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -127,7 +150,7 @@
 </script>
 <script src="js/vue3.js"></script>
 
-<script src="js/04.js"></script>
+<script src="js/teacher.js"></script>
 
 </body>
 

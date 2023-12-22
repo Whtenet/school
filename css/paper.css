@@ -1,0 +1,10 @@
+.spanborder {
+    border-bottom: 1px solid #e8f3ec;
+    margin-bottom: 2rem;
+}
+
+.spanborder span {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 20px;
+}

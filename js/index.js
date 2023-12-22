@@ -4,11 +4,11 @@ createApp({
     setup() {
         const navbarData = [
             {title: '首页', href: 'index.html'},
-            {title: '01', href: '01.html'},
-            {title: '02', href: '02.html'},
-            {title: '03', href: '03.html'},
-            {title: '04', href: '04.html'},
-            {title: '05', href: '05.html'}
+            {title: '名师风采', href: 'teacher.html'},
+            {title: '校园生活', href: 'life.html'},
+            {title: '新闻聚焦', href: 'news.html'},
+            {title: '优美风景', href: 'sight.html'},
+            {title: '学校介绍', href: 'school.html'}
         ];
 
 
@@ -93,10 +93,10 @@ createApp({
         const items = [
             {
                 class: "col-sm-4 col-lg-2 order-lg-2",
-                title: "关于",
+                title: "关于我们",
                 links: [
-                    {label: "关于我们", url: "/about/"},
-                    {label: "友链", url: "/links/"}
+                    {label: "网站声明"},
+                    {label: "学校介绍", url: "school.html"}
                 ]
             },
             {
@@ -109,10 +109,10 @@ createApp({
             },
             {
                 class: "col-sm-4 col-lg-2 order-lg-4",
-                title: "联系方式",
+                title: "更多链接",
                 links: [
-                    {label: "微博", url: "https://weibo.com/bootcss"},
-                    {label: "邮箱", url: "mailto:cdn@bootcdn.cn"}
+                    {label: "法律顾问"},
+                    {label: "人才招聘"}
                 ]
             }
         ];
