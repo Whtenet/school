@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My-School</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/semantic.min.css">
     <style>
         main {
             background-color: #000000;
@@ -58,7 +59,7 @@
     <main style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
             <!-- 轮播图 -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 
                 <ol class="carousel-indicators">
                     <li v-for="(item, index) in bannerData" :key="index" :data-target="'#carouselExampleIndicators'"
@@ -85,30 +86,6 @@
 
             <!-- 内容部分 -->
             <div class="mt-4">
-                <!--卡片1-->
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
-
-                    <div v-for="(item, index) in cardData"
-                         class="col d-flex justify-content-center pb-5 rounded-home-item">
-                        <div class="card shadow position-relative h-100 bg-dark text-white rounded-home-item"
-                             style="max-width: 310px;">
-                            <div class="card-header p-1">
-								<img class="img-fluid lazy rounded-home-item-img"
-                                      :src="item.imageSrc" width="300" height="150"
-                                      :alt="item.title"></div>
-                            <div class="card-body p-3">
-                                <h4 class="h5 mb-2">
-                                    <a class="link-dark stretched-link" target="_blank">{{item.title}}</a>
-                                </h4>
-                                <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
-                                    {{item.description}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
 
                 <!--文章-->
                 <div class="row justify-content-between text-white">
@@ -149,7 +126,36 @@
 
 
                 </div>
-                
+                <!--title-->
+                <h4 class="ui horizontal divider header text-white">
+                    <i class="bar chart icon"></i>
+                    头条新闻
+                </h4>
+                <!--卡片1-->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
+
+                    <div v-for="(item, index) in cardData"
+                         class="col d-flex justify-content-center pb-5 rounded-home-item">
+                        <div class="card shadow position-relative h-100 bg-dark text-white rounded-home-item"
+                             style="max-width: 310px;">
+                            <div class="card-header p-1">
+                                <img class="img-fluid lazy rounded-home-item-img"
+                                     :src="item.imageSrc" width="300" height="150"
+                                     :alt="item.title"></div>
+                            <div class="card-body p-3">
+                                <h4 class="h5 mb-2">
+                                    <a class="link-dark stretched-link text-white" target="_blank">{{item.title}}</a>
+                                </h4>
+                                <p class="card-text mb-3 text-white-50" style="height: 7rem; overflow: hidden;">
+                                    {{item.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
 
             </div>
 
@@ -201,12 +207,12 @@
 <!-- 引入脚本文件 -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/semantic.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>
 <script src="js/vue3.js"></script>
-
 <script src="js/index.js"></script>
 
 </body>
