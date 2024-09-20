@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li v-for="(item, index) in navbarData" :key="index"
-                        :class="{ 'nav-item': true, 'active': index === 0 }">
+                        :class="{ 'nav-item': true, 'active': index === navbarIndex }">
                         <a class="nav-link" :href="item.href">{{ item.title }}</a>
                     </li>
                 </ul>
